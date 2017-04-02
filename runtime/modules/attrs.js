@@ -2,6 +2,7 @@
 
 import { extend } from 'shared/util'
 import { setAttribute } from 'node-blessed/util/attrs'
+import { triggerRender } from 'node-blessed/runtime/util'
 
 function updateAttrs (oldVnode: VNodeWithData, vnode: VNodeWithData) {
   if (!oldVnode.data.attrs && !vnode.data.attrs) {
@@ -29,6 +30,8 @@ function updateAttrs (oldVnode: VNodeWithData, vnode: VNodeWithData) {
       setAttribute(elm, key, null)
     }
   }
+
+  triggerRender()
 }
 
 export default {
