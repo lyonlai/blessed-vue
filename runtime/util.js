@@ -1,14 +1,9 @@
 /* @flow */
-import blessed from 'blessed'
+import { throttle } from 'lodash'
 
-export function getScreen (index: Int = 0) {
-  return blessed.screen.instances[index]
+function _refreshNode (node) {
+  node.screen.render()
 }
 
-export function triggerRender () {
-  const screen = getScreen()
-
-  if (screen) {
-    screen.render()
-  }
-}
+// limit the screen repaint rate to max 60fps
+export const refreshNode = throttle(_refreshNode, 16)
