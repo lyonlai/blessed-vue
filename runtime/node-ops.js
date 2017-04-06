@@ -1,12 +1,17 @@
 /* @flow */
 import blessed from 'blessed'
 export { setAttribute } from 'node-blessed/util/attrs'
-import { triggerRender } from 'node-blessed/runtime/util'
+import { refreshNode } from './util'
+import { transformStaticStyle, normalizeStyleBinding } from 'node-blessed/util/style'
 
 export function createElement (tagName: string, vnode: VNode) {
   const data = vnode.data || {}
-
-  return blessed[tagName](Object.assign({ parent: vnode.elm }, data.attrs))
+  const { staticStyle, style } = data
+  const el = blessed[tagName](Object.assign({ parent: vnode.elm }, data.attrs, {
+    style: staticStyle ? transformStaticStyle(staticStyle) : normalizeStyleBinding(style)
+  }))
+  el.elm = el
+  return el
 }
 
 export function createElementNS (namespace: string, tagName: string) {
@@ -23,21 +28,18 @@ export function createComment (text: string): Comment {
 
 export function insertBefore (parentNode, newNode, referenceNode) {
   parentNode.insertBefore(newNode, referenceNode)
-  triggerRender()
+  refreshNode(parentNode)
 }
 
 export function removeChild (node, child) {
+  child.destroy()
   node.remove(child)
-  triggerRender()
+  refreshNode(node)
 }
 
 export function appendChild (node, child) {
-  if (child instanceof blessed['Screen'] && !node.screen) {
-    node.sceen = child
-  }
-
   node.append(child)
-  triggerRender()
+  refreshNode(node)
 }
 
 export function parentNode (node) {
@@ -57,5 +59,5 @@ export function tagName (node): string {
 
 export function setTextContent (node, text: string) {
   node.setContent(text)
-  triggerRender()
+  refreshNode(node)
 }

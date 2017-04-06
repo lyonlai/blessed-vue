@@ -1,4 +1,5 @@
 /* @flow */
+import { merge } from 'lodash'
 export const mustUseProp = () => false
 
 const selectQue = []
@@ -67,11 +68,11 @@ export function setAttribute (node, key: string, value: string) {
   } else if (key === 'content') { // Setting content
     node.setContent(value)
   } else if (key === 'style') { // Updating style
-    node.style = Object.assign({}, node.style, value)
+    node.style = merge({}, node.style, value)
   } else if (key === 'items') { // Updating items
     node.setItems(value)
   } else if (key === 'border') { // Border edge case
-    node.border = Object.assign({}, node.border, value)
+    node.border = merge({}, node.border, value)
   } else if (key === 'value' && node.setValue) { // Textarea value
     node.setValue(value)
   } else if (key === 'filled' && node.filled !== value) { // Progress bar
