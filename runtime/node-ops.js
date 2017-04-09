@@ -19,7 +19,7 @@ export function createElementNS (namespace: string, tagName: string) {
 }
 
 export function createTextNode (text: string, options: Object = {}): Text {
-  return blessed['text'](Object.assign({ content: text }, options))
+  return blessed['text'](Object.assign({ content: text, hidden: text.trim() === '' }, options))
 }
 
 export function createComment (text: string): Comment {
