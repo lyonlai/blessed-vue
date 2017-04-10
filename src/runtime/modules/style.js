@@ -1,7 +1,7 @@
 /* @flow */
 
-import { normalizeStyleBinding, transformStaticStyle } from 'node-blessed/util/style'
-import { setAttribute } from 'node-blessed/util/attrs'
+import { normalizeStyleBinding, transformStaticStyle } from 'util/style'
+import { setAttribute } from 'util/attrs'
 
 function updateStyle (oldVnode: VNodeWithData, vnode: VNodeWithData) {
   const data = vnode.data

@@ -1,7 +1,7 @@
 /* @flow */
 
 import { extend } from 'shared/util'
-import { setAttribute } from 'node-blessed/util/attrs'
+import { setAttribute } from 'util/attrs'
 import { refreshNode } from '../util'
 
 function updateAttrs (oldVnode: VNodeWithData, vnode: VNodeWithData) {

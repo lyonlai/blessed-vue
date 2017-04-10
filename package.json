@@ -1,0 +1,26 @@
+{
+  "name": "blessed-vue",
+  "version": "1.0.0",
+  "description": "A VueJS runtime to render Blessed in building command line UI.",
+  "main": "dist/build.js",
+  "repository": "lyonlai/blessed-vue",
+  "author": "Yun Lai <lyonlai1984@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c build/config.js "
+  },
+  "devDependencies": {
+    "buble": "^0.15.2",
+    "flow": "^0.2.3",
+    "rollup": "^0.41.6",
+    "rollup-plugin-alias": "^1.2.1",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-flow-no-whitespace": "^1.0.0",
+    "rollup-plugin-replace": "^1.1.1"
+  },
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "lodash": "^4.17.4",
+    "vue": "^2.2.6"
+  }
+}

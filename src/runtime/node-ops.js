@@ -1,8 +1,8 @@
 /* @flow */
 import blessed from 'blessed'
-export { setAttribute } from 'node-blessed/util/attrs'
+export { setAttribute } from 'util/attrs'
 import { refreshNode } from './util'
-import { transformStaticStyle, normalizeStyleBinding } from 'node-blessed/util/style'
+import { transformStaticStyle, normalizeStyleBinding } from 'util/style'
 
 export function createElement (tagName: string, vnode: VNode) {
   const data = vnode.data || {}
