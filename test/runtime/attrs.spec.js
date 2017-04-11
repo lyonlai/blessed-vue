@@ -1,4 +1,4 @@
-import BlessedVue from '../../../packages/blessed-vue'
+import BlessedVue from '../../dist/build'
 import { prepareBlessedForTest } from './util'
 
 describe('generate attribute', () => {

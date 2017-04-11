@@ -1,4 +1,4 @@
-import blessed from '../../../packages/blessed-vue/node_modules/blessed'
+import blessed from 'blessed'
 
 export const walk = (node, cb) => {
   if (!node.children || node.children.length < 0) {

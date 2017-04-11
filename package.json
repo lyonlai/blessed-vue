@@ -1,22 +1,41 @@
 {
   "name": "blessed-vue",
   "version": "1.0.0",
-  "description": "A VueJS runtime to render Blessed in building command line UI.",
+  "description": "A VueJS runtime to render Blessed to build command line UI.",
   "main": "dist/build.js",
   "repository": "lyonlai/blessed-vue",
   "author": "Yun Lai <lyonlai1984@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c build/config.js "
+    "build": "npm run lint && cross-env NODE_ENV=production rollup -c build/config.js ",
+    "dev": "cross-env NODE_ENV=development rollup -w -c build/config.js ",
+    "lint": "eslint src test",
+    "test": "npm run build && jasmine JASMINE_CONFIG_PATH=test/jasmine.json"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.4.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow-vue": "^1.0.0",
+    "babel-register": "^6.24.1",
     "buble": "^0.15.2",
+    "cross-env": "^4.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-flowtype": "^2.30.4",
+    "eslint-plugin-jasmine": "^2.2.0",
+    "eslint-plugin-vue": "^2.0.1",
     "flow": "^0.2.3",
+    "jasmine": "^2.5.3",
     "rollup": "^0.41.6",
     "rollup-plugin-alias": "^1.2.1",
     "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-bundle-size": "^1.0.1",
     "rollup-plugin-flow-no-whitespace": "^1.0.0",
-    "rollup-plugin-replace": "^1.1.1"
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-watch": "^3.2.2"
   },
   "dependencies": {
     "blessed": "^0.1.81",

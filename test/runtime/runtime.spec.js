@@ -1,5 +1,5 @@
-import BlessedVue from '../../../packages/blessed-vue'
-import blessed from '../../../packages/blessed-vue/node_modules/blessed'
+import BlessedVue from '../../dist/build'
+import blessed from 'blessed'
 import { walk, prepareBlessedForTest } from './util'
 
 describe('runtime tests', () => {
