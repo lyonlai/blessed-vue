@@ -6,8 +6,11 @@
   "repository": "https://github.com/lyonlai/blessed-vue.git",
   "author": "Yun Lai <lyonlai1984@gmail.com>",
   "license": "MIT",
+  "files": [
+    "src",
+    "dist/*.js"
+  ],
   "scripts": {
-    "prepublishOnly": "npm run test",
     "build": "npm run lint && cross-env NODE_ENV=production rollup -c build/config.js ",
     "dev": "cross-env NODE_ENV=development rollup -w -c build/config.js ",
     "lint": "eslint src test",
