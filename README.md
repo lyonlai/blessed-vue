@@ -1,4 +1,4 @@
-# blessed-vue [![Build Status](https://travis-ci.org/lyonlai/blessed-vue.svg?branch=master)](https://travis-ci.org/lyonlai/blessed-vue) [![Dependency Status](https://david-dm.org/boennemann/badges.svg)](https://david-dm.org/boennemann/badges)
+# blessed-vue [![Build Status](https://travis-ci.org/lyonlai/blessed-vue.svg?branch=master)](https://travis-ci.org/lyonlai/blessed-vue) [![Dependency Status](https://david-dm.org/boennemann/badges.svg)](https://david-dm.org/boennemann/badges) [![npm version](https://badge.fury.io/js/blessed-vue.svg)](https://badge.fury.io/js/blessed-vue)
 
 This package is a runtime for [blessed](https://github.com/chjj/blessed). Blessed is a great replacement for [ncurses](https://en.wikipedia.org/wiki/Ncurses) in building UI for terminal interface in Javascript. The intention of creating this runtime is to bring declarative templates and reactive components of VueJS to simplify the layout of blessed components.
 
