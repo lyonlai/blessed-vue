@@ -1,0 +1,24 @@
+{
+  "name": "vue-blessed-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-watch": "^3.2.2"
+  },
+  "scripts": {
+    "dev": "rollup -w -c rollup.config.js"
+  },
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "blessed-vue": "^1.0.0",
+    "faker": "^4.1.0",
+    "moment": "^2.18.1",
+    "rollup-plugin-vue2": "^0.8.0",
+    "vuex": "^2.2.1",
+    "vuex-module-configuration-composer": "^1.0.0"
+  }
+}
