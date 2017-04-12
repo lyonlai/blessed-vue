@@ -16,16 +16,16 @@ This package is inspired by [react-blessed](https://github.com/Yomguithereal/rea
 
 ## Features
 ### Supported Element
-All the widgets in [Blessed Widgets](https://github.com/chjj/blessed#widgets) should be supported out of the box. For details of what attributes is available for each element. Please refer to the specific widget in the [document](https://github.com/chjj/blessed).
+All the widgets in [Blessed Widgets](https://github.com/chjj/blessed#widgets) should be supported out of the box. For details of what attributes are available for each element, please refer to the specific widget in the [document](https://github.com/chjj/blessed).
 
 
 ### Style
-The styling in Blessed Vue is not quite like CSS in the Web. In CSS the style you defined in parent can cascade/flow down to its children tree, where in blessed the style is only for the defined element.
+The styling in Blessed Vue is not quite like CSS in the Web. In CSS the style you define on the parent can cascade/flow down to its children down the DOM tree, where in blessed the style is only used by the element it is defined on.
 
 You can style your blessed element in the following ways.
 
 #### Static string style
-If your don't need value binding in your element style. Blessed Vue supports string style definition. For nested value like focus, hover, scrollbar, etc..., you can use dot style to specify the nested value. See the following example.
+If you don't need value binding in your element style. Blessed Vue supports string style definition. For nested value like focus, hover, scrollbar, etc..., you can use dot style to specify the nested value. See the following example.
 
 ```html
 <box style='bg: white; fg: black; hover.bg: black; hover.fg: white'/>
@@ -93,9 +93,10 @@ npm install blessed-vue
 ```
 
 ## Example
-The following exmample consists of two files. `index.js` & `test-component.vue`. At the moment blessed-vue shares the same template compiler with web runtime. So in order to load the [single file component](https://vuejs.org/v2/guide/single-file-components.html), you can use either [vue-loader](https://github.com/vuejs/vue-loader) when you are with [webpack](https://webpack.github.io/), or [rollup-plugin-vue](https://github.com/vuejs/rollup-plugin-vue) when you are with [rollup](https://rollupjs.org/).
 
-![Example screen shot](./screenshot.png "Example screen shot")
+The following example consists of two files. `index.js` & `test-component.vue`. At the moment blessed-vue shares the same template compiler with web runtime. So in order to load the [single file component](https://vuejs.org/v2/guide/single-file-components.html), you can use either [vue-loader](https://github.com/vuejs/vue-loader) when you are using [webpack](https://webpack.github.io/), or [rollup-plugin-vue](https://github.com/vuejs/rollup-plugin-vue) when you are using [rollup](https://rollupjs.org/).
+
+![Example screenshot](./screenshot.png "Example screenshot")
 
 
 ### index.js
