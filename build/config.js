@@ -22,6 +22,7 @@ export default {
   ],
   external: [
     'blessed',
-    'lodash'
+    'lodash',
+    'blessed-contrib'
   ]
 }

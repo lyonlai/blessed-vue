@@ -1,13 +1,21 @@
 /* @flow */
 import blessed from 'blessed'
-export { setAttribute } from 'util/attrs'
+import contrib from 'blessed-contrib'
+export { setAttribute } from 'util/attrs/index'
+import {
+  continueAttributeUpdateIfRequired,
+  isOverlappingTags,
+  isBlessedTag
+} from 'util/index'
 import { refreshNode } from './util'
 import { transformStaticStyle, normalizeStyleBinding } from 'util/style'
 
 export function createElement (tagName: string, vnode: VNode) {
+  const isBlessed = isOverlappingTags(tagName) ? vnode.data.attrs.blessed === true : isBlessedTag(tagName)
+  const ctor = isBlessed ? blessed : contrib
   const data = vnode.data || {}
   const { staticStyle, style } = data
-  const el = blessed[tagName](Object.assign({ parent: vnode.elm }, data.attrs, {
+  const el = ctor[tagName](Object.assign({ parent: vnode.elm }, data.attrs, {
     style: staticStyle ? transformStaticStyle(staticStyle) : normalizeStyleBinding(style)
   }))
   el.elm = el
@@ -39,6 +47,8 @@ export function removeChild (node, child) {
 
 export function appendChild (node, child) {
   node.append(child)
+
+  continueAttributeUpdateIfRequired(child)
   refreshNode(node)
 }
 

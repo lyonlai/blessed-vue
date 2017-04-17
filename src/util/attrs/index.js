@@ -2,6 +2,10 @@
 import { merge } from 'lodash'
 export const mustUseProp = () => false
 
+import { queueAttributeUpdate, shouldQueueAttributeUpdate } from './delayed-update-queue'
+
+export { continueAttributeUpdateIfRequired } from './delayed-update-queue'
+
 const selectQue = []
 
 const RAW_ATTRIBUTES = new Set([
@@ -53,7 +57,11 @@ const RAW_ATTRIBUTES = new Set([
   'name'
 ])
 
-export function setAttribute (node, key: string, value: string) {
+export function setAttribute (node, key: string, value: any) {
+  if (shouldQueueAttributeUpdate(node)) {
+    return queueAttributeUpdate(node, setAttribute, key, value)
+  }
+
   if (key === 'selected' && node.select) {
     selectQue.push({
       node,
@@ -81,6 +89,18 @@ export function setAttribute (node, key: string, value: string) {
     node.setData(value)
   } else if (key === 'focused' && value && !node[key]) {
     node.focus()
+  } else if (key === 'percent' && node.setPercent) {
+    node.setPercent(value)
+  } else if (key === 'stack' && node.setStack) {
+    node.setStack(value)
+  } else if (key === 'display' && node.setDisplay) {
+    node.setDisplay(value)
+  } else if (key === 'markdown' && node.setMarkdown) {
+    node.setMarkdown(value)
+  } else if (key === 'markers' && node.addMarker) {
+    node.clearMarkers()
+
+    value.forEach(val => node.addMarker(JSON.parse(JSON.stringify(val))))
   } else if (RAW_ATTRIBUTES.has(key)) { // Raw attributes
     node[key] = value
   }

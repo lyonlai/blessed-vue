@@ -1,5 +1,5 @@
 /* @flow */
 
-export * from './attrs'
+export * from './attrs/index'
 export * from './dom'
 export * from './element'

@@ -1,7 +1,7 @@
 /* @flow */
 
 import { normalizeStyleBinding, transformStaticStyle } from 'util/style'
-import { setAttribute } from 'util/attrs'
+import { setAttribute } from 'util/index'
 
 function updateStyle (oldVnode: VNodeWithData, vnode: VNodeWithData) {
   const data = vnode.data
