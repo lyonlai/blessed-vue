@@ -1,0 +1,19 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "start": "npm run build && node bundle.js"
+  },
+  "devDependencies": {
+    "vue-loader": "^11.3.4",
+    "vue-template-compiler": "^2.2.6",
+    "webpack": "^2.3.3",
+    "webpack-node-externals": "^1.5.4"
+  },
+  "dependencies": {
+    "moment": "^2.18.1"
+  }
+}
