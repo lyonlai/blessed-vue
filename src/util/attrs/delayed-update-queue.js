@@ -1,6 +1,11 @@
 import { isContribElement } from '../element'
 const queue = new Map()
 
+/*
+  The purpose of this module is to queue up the attribute update for blessed-contrib
+  element and flush them out after the element has been attached to the screen.
+*/
+
 export function queueAttributeUpdate (node, fn, ...args) {
   let queueForNode = queue.get(node)
   if (!queueForNode) {

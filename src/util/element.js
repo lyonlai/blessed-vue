@@ -21,8 +21,7 @@ export const isBlessedTag = makeMap(prepareMakeMap(blessedTags))
 
 const contribTags = [
   'line', 'bar', 'stacked-bar', 'map', 'gauge',
-  'donut', 'lcd', 'log', 'picture', 'sparkline', 'table', 'tree', 'markdown', 'grid',
-  'carousel'
+  'donut', 'lcd', 'log', 'picture', 'sparkline', 'table', 'tree', 'markdown'
 ]
 
 export const isContribTag = makeMap(prepareMakeMap(contribTags))

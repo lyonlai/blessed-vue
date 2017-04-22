@@ -14,7 +14,8 @@
     "build": "npm run lint && cross-env NODE_ENV=production rollup -c build/config.js ",
     "dev": "cross-env NODE_ENV=development rollup -w -c build/config.js ",
     "lint": "eslint src test",
-    "test": "npm run build && jasmine JASMINE_CONFIG_PATH=test/jasmine.json"
+    "test": "npm run build && jasmine JASMINE_CONFIG_PATH=test/jasmine.json",
+    "test-debug": "npm build && node --inspect --debug-brk ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=test/jasmine.json"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",

@@ -97,6 +97,8 @@ export function setAttribute (node, key: string, value: any) {
     node.setDisplay(value)
   } else if (key === 'markdown' && node.setMarkdown) {
     node.setMarkdown(value)
+  } else if (key === 'options' && node.setOptions) {
+    node.setOptions(value)
   } else if (key === 'markers' && node.addMarker) {
     node.clearMarkers()
 
