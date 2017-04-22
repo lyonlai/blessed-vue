@@ -3,8 +3,6 @@ sudo: required
 services:
   - docker
 
-language: node_js
-
 install: true
 
-script: docker-test.sh
+script: ./docker-test.sh
