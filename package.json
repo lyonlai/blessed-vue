@@ -6,6 +6,19 @@
   "repository": "https://github.com/lyonlai/blessed-vue.git",
   "author": "Yun Lai <lyonlai1984@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "vue",
+    "blessed",
+    "blessed-contrib",
+    "command line",
+    "cli",
+    "command line ui",
+    "cli ui",
+    "curse",
+    "ncurse",
+    "graph",
+    "dashboard"
+  ],
   "files": [
     "src",
     "dist/*.js"
