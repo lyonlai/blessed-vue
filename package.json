@@ -24,7 +24,6 @@
     "dist/*.js"
   ],
   "scripts": {
-    "prepublish": "npm run build",
     "build": "npm run lint && cross-env NODE_ENV=production rollup -c build/config.js ",
     "dev": "cross-env NODE_ENV=development rollup -w -c build/config.js ",
     "lint": "eslint src test",
