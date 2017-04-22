@@ -1,4 +1,4 @@
-import Vue from '../../dist/build'
+import Vue from 'blessed-vue'
 import Dashboard from './dashboard.vue'
 
 const el = Vue.dom.createElement()
