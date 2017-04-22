@@ -1,6 +1,10 @@
 # blessed-vue [![Build Status](https://travis-ci.org/lyonlai/blessed-vue.svg?branch=master)](https://travis-ci.org/lyonlai/blessed-vue) [![Dependency Status](https://david-dm.org/boennemann/badges.svg)](https://david-dm.org/boennemann/badges) [![npm version](https://badge.fury.io/js/blessed-vue.svg)](https://badge.fury.io/js/blessed-vue)
 
-This package is a runtime for [blessed](https://github.com/chjj/blessed). Blessed is a great replacement for [ncurses](https://en.wikipedia.org/wiki/Ncurses) in building UI for terminal interface in Javascript. The intention of creating this runtime is to bring declarative templates and reactive components of VueJS to simplify the layout of blessed components.
+This package is a Vue.js runtime for [blessed](https://github.com/chjj/blessed) and now [blessed-contrib](https://github.com/yaronn/blessed-contrib).
+
+Blessed is a great replacement for [ncurses](https://en.wikipedia.org/wiki/Ncurses) in building UI for terminal interface in Javascript. The intention of creating this runtime is to bring declarative templates and reactive components of VueJS to simplify the layout of blessed components.
+
+blessed-contrib is an extension of blessed with custom [drawllie](https://github.com/madbence/node-drawille) widgets to make building dashboard easy in command line.
 
 This package is inspired by [react-blessed](https://github.com/Yomguithereal/react-blessed).
 
@@ -12,11 +16,14 @@ This package is inspired by [react-blessed](https://github.com/Yomguithereal/rea
     - [Array style binding](#static-string-style)
     - [Object style](#object-style)
 - [Installation](#installation)
-- [Example](#example)  
+- [Example](#example)
+  - [Screenshots](#screenshots)
+    - [Login](#login)
+    - [Dashboard](#dashboard)
 
 ## Features
 ### Supported Element
-All the widgets in [Blessed Widgets](https://github.com/chjj/blessed#widgets) should be supported out of the box. For details of what attributes are available for each element, please refer to the specific widget in the [document](https://github.com/chjj/blessed).
+All the widgets in [blessed widgets](https://github.com/chjj/blessed#widgets) and [blessed-contrib widgets](https://github.com/yaronn/blessed-contrib#widgets) should be supported out of the box. For details of what attributes are available for each element, please refer to the specific widget in  [blessed document](https://github.com/chjj/blessed) or [blessed-contrib document](https://github.com/yaronn/blessed-contrib).
 
 
 ### Style
@@ -95,12 +102,19 @@ npm install blessed-vue
 ## Example
 The following example consists of two files. `index.js` & `test-component.vue`. At the moment blessed-vue shares the same template compiler with web runtime. So in order to load the [single file component](https://vuejs.org/v2/guide/single-file-components.html), you can use either [vue-loader](https://github.com/vuejs/vue-loader) when you are using [webpack](https://webpack.github.io/), or [rollup-plugin-vue2](https://github.com/thgh/rollup-plugin-vue2) when you are using [rollup](https://rollupjs.org/).
 
-There are also two examples in this repo.
+There are examples available in [example folder](https://github.com/lyonlai/blessed-vue/tree/master/examples).
 
 * login: Full example shown in README.md using rollup.
 * call-log: an example of webpack & vue-loader.
+* dashboard: an example of how to use blessed-contrib element to build a command line dashboard.
 
-![Example screenshot](./screenshot.png "Example screenshot")
+### Screenshots
+
+#### Login
+![Login example screenshot](./screenshot.png "Login example screenshot")
+
+#### Dashboard
+![Dashboard example screenshot](./dashboard.gif "Dashboard example screenshot")
 
 
 ### index.js
