@@ -100,7 +100,8 @@ npm install blessed-vue
 ```
 
 ## Example
-The following example consists of two files. `index.js` & `test-component.vue`. At the moment blessed-vue shares the same template compiler with web runtime. So in order to load the [single file component](https://vuejs.org/v2/guide/single-file-components.html), you can use either [vue-loader](https://github.com/vuejs/vue-loader) when you are using [webpack](https://webpack.github.io/), or [rollup-plugin-vue2](https://github.com/thgh/rollup-plugin-vue2) when you are using [rollup](https://rollupjs.org/).
+
+The following example consists of two files. `index.js` & `test-component.vue`. At the moment blessed-vue shares the same template compiler with web runtime. So in order to load the [single file component](https://vuejs.org/v2/guide/single-file-components.html), you can use either [vue-loader](https://github.com/vuejs/vue-loader) when you are using [webpack](https://webpack.github.io/), or [rollup-plugin-vue](https://github.com/vuejs/rollup-plugin-vue) when you are using [rollup](https://rollupjs.org/).
 
 There are examples available in [example folder](https://github.com/lyonlai/blessed-vue/tree/master/examples).
 
