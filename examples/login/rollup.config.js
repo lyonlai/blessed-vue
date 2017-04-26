@@ -1,4 +1,4 @@
-import vue from 'rollup-plugin-vue2';
+import vue from 'rollup-plugin-vue';
 import buble from 'rollup-plugin-buble';
 
 export default {
@@ -6,7 +6,12 @@ export default {
   format: 'cjs',
   dest: 'bundle.js', // equivalent to --output
   plugins: [
-    vue(),
+    vue({
+      htmlMinifier: {
+        caseSensitive: true,
+        keepClosingSlash: true
+      }
+    }),
     buble({
       objectAssign: true
     })

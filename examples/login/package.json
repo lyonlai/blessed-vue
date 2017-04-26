@@ -10,14 +10,15 @@
     "rollup-watch": "^3.2.2"
   },
   "scripts": {
-    "dev": "rollup -w -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "start": "npm run build && node bundle.js"
   },
   "dependencies": {
     "blessed": "^0.1.81",
     "blessed-vue": "^1.0.0",
     "faker": "^4.1.0",
     "moment": "^2.18.1",
-    "rollup-plugin-vue2": "^0.8.0",
+    "rollup-plugin-vue": "^2.3.1",
     "vuex": "^2.2.1",
     "vuex-module-configuration-composer": "^1.0.0"
   }

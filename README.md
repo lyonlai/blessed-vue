@@ -17,6 +17,7 @@ This package is inspired by [react-blessed](https://github.com/Yomguithereal/rea
     - [Object style](#object-style)
 - [Installation](#installation)
 - [Example](#example)
+  - [Configuration for rollup-plugin-vue](#configuration-for-rollup-plugin-vue)
   - [Screenshots](#screenshots)
     - [Login](#login)
     - [Dashboard](#dashboard)
@@ -103,9 +104,36 @@ npm install blessed-vue
 
 The following example consists of two files. `index.js` & `test-component.vue`. At the moment blessed-vue shares the same template compiler with web runtime. So in order to load the [single file component](https://vuejs.org/v2/guide/single-file-components.html), you can use either [vue-loader](https://github.com/vuejs/vue-loader) when you are using [webpack](https://webpack.github.io/), or [rollup-plugin-vue](https://github.com/vuejs/rollup-plugin-vue) when you are using [rollup](https://rollupjs.org/).
 
+### Configuration for rollup-plugin-vue
+There are two lines of config you need to put into rollup-plugin-vue to get blessed-vue working properly. The full example is available in the login example.
+
+```javascript
+// rollup.config.js
+
+import vue from 'rollup-plugin-vue';
+// more imports
+
+export default {
+  entry: 'src/index.js',
+  dest: 'bundle.js', // equivalent to --output
+  ..., // more configs.
+  plugins: [
+    vue({
+      htmlMinifier: {
+        caseSensitive: true, // turn on the case sensitive for preserving the props
+        keepClosingSlash: true // keep the singleton elements working.
+      }
+    }),
+    ... // more plugins
+  ],
+  ...
+};
+
+```
+
 There are examples available in [example folder](https://github.com/lyonlai/blessed-vue/tree/master/examples).
 
-* login: Full example shown in README.md using rollup.
+* login: Full example shown in README.md using rollup. (*Using official plugin rollup-plugin-vue now.*)
 * call-log: an example of webpack & vue-loader.
 * dashboard: an example of how to use blessed-contrib element to build a command line dashboard.
 

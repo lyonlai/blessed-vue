@@ -1,9 +1,9 @@
 # Login form example
+This is an rollup example.
 
 ## Usage
 
 ```
 yarn install
-yarn run dev
-node bundle.js
+yarn start
 ```
