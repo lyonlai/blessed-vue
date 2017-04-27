@@ -8,9 +8,9 @@
     "start": "npm run build && node bundle.js"
   },
   "devDependencies": {
-    "blessed-vue": "^1.0.0",
-    "vue-loader": "^11.3.4",
-    "vue-template-compiler": "^2.2.6",
+    "blessed-vue": "^1.2.0",
+    "vue-loader": "^12.0.2",
+    "vue-template-compiler": "^2.3.0",
     "webpack": "^2.3.3",
     "webpack-node-externals": "^1.5.4"
   },

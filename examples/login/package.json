@@ -15,11 +15,9 @@
   },
   "dependencies": {
     "blessed": "^0.1.81",
-    "blessed-vue": "^1.0.0",
+    "blessed-vue": "^1.2.0",
     "faker": "^4.1.0",
     "moment": "^2.18.1",
-    "rollup-plugin-vue": "^2.3.1",
-    "vuex": "^2.2.1",
-    "vuex-module-configuration-composer": "^1.0.0"
+    "rollup-plugin-vue": "^2.3.1"
   }
 }
