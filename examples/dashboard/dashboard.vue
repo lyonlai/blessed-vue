@@ -1,6 +1,6 @@
 <template>
   <screen ref='screen' :smartCSR="true" :keys="true">
-    <line label="blah" :data="lineData" :barWidth="4" :barSpacing="6" :xOffset="0" :maxHeight="9" align="center" valign="middle" :border="{ type: 'line' }" :style="logStyle" :top="0" :left="0" :width="100" :height="20" />
+    <line-graph :lineData="lineData" :style="logStyle"/>
     <donut :border="{ type: 'line' }" :style="{ border: { fg: 'green' } }" label="Progress" :radius="10" :arcWidth="4" remainColor="black"  :width="50" :height="20" :top="20" left="center" :data="donut"/>
     <lcd :segmentWidth="0.06"  :segmentInterval="0.11"
      :strokeWidth="0.11"
@@ -20,10 +20,14 @@
 
 <script>
 import moment from 'moment'
+import LineGraph from './line.js'
 let counter = 12;
 
 export default {
   name: 'log-component',
+  components: {
+    LineGraph
+  },
   data: () => {
     return {
       lineData: {
