@@ -1,6 +1,6 @@
 <template>
   <screen ref='screen' :smartCSR="true" :keys="true">
-    <log :content="logs" align="center" valign="middle" :border="{ type: 'line' }" :style="logStyle" top="center" left="center" width="50%" height="50%"/>
+    <log ref='log' :blessed='true' :content="logs" align="center" valign="middle" :border="{ type: 'line' }" :style="logStyle" top="center" left="center" width="50%" height="50%"/>
   </screen>
 </template>
 

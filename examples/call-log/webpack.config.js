@@ -7,7 +7,7 @@ module.exports = {
     libraryTarget: "commonjs"
   },
   target: 'node',
-  externals: [nodeExternals()],
+  externals: [nodeExternals()]..concat(['../../dist/build']),
   module: {
     // module.rules is the same as module.loaders in 1.x
     rules: [
