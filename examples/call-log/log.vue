@@ -8,11 +8,18 @@
 import moment from 'moment'
 import faker from 'faker'
 import prettySeconds from 'pretty-seconds'
+import { mapActions, mapState } from 'vuex'
+
 export default {
   name: 'log-component',
+  computed: mapState({
+    logs: state => state.logs
+  }),
+  methods: mapActions([
+    'appendLog'
+  ]),
   data: () => {
     return {
-      logs: '',
       logStyle: {
         bg: 'black',
         fg: 'white',
@@ -27,8 +34,9 @@ export default {
     this.$refs.screen.key(['C-c'], () => {
       process.exit(0)
     })
+    console.log(this.$store)
     setInterval(() => {
-      this.logs = `${this.logs}\n\n${faker.name.findName()} called from ${faker.address.state()} ${prettySeconds(faker.random.number(3600))} ago.`
+      this.appendLog(`${faker.name.findName()} called from ${faker.address.state()} ${prettySeconds(faker.random.number(3600))} ago.`)
     }, 1000)
   }
 }

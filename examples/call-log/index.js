@@ -1,5 +1,6 @@
 import Vue from 'blessed-vue'
 import LogComponent from './log.vue'
+import store from './store'
 
 const el = Vue.dom.createElement()
 
@@ -10,5 +11,6 @@ const instance = new Vue({
   components: {
     LogComponent
   },
+  store,
   template: '<LogComponent />'
 }).$mount(el)
