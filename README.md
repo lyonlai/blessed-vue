@@ -1,8 +1,8 @@
 # blessed-vue [![Build Status](https://travis-ci.org/lyonlai/blessed-vue.svg?branch=master)](https://travis-ci.org/lyonlai/blessed-vue) [![Dependency Status](https://david-dm.org/boennemann/badges.svg)](https://david-dm.org/boennemann/badges) [![npm version](https://badge.fury.io/js/blessed-vue.svg)](https://badge.fury.io/js/blessed-vue)
 
-Compile against **[VueJS 2.3.0](https://github.com/vuejs/vue/releases/tag/v2.3.0)**.
+Compile against **[VueJS 2.5.13](https://github.com/vuejs/vue/releases/tag/v2.5.13)**.
 
-This package is a Vue.js runtime for [blessed](https://github.com/chjj/blessed) and now [blessed-contrib](https://github.com/yaronn/blessed-contrib). The current version is compiled against VueJS 2.3.0, which means those lovely features and bug fixes comes with v2.3.0 in vue core will be available in the current version. For example, the lovely improvements about the functional components.
+This package is a Vue.js runtime for [blessed](https://github.com/chjj/blessed) and now [blessed-contrib](https://github.com/yaronn/blessed-contrib). The current version is compiled against VueJS 2.5.13, which means those lovely features and bug fixes comes with v2.5.13 in vue core will be available in the current version. For example, the lovely improvements about the functional components.
 
 Blessed is a great replacement for [ncurses](https://en.wikipedia.org/wiki/Ncurses) in building UI for terminal interface in Javascript. The intention of creating this runtime is to bring declarative templates and reactive components of VueJS to simplify the layout of blessed components.
 
