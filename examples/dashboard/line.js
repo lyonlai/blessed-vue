@@ -5,7 +5,7 @@ export default {
   render: function (createElement, { data: { style }, props: { lineData }}) {
     return createElement('line', {
       attrs: {
-        label: 'blah',
+        label: 'Press F2 to swap to bar graph',
         data: lineData,
         barWidth: 4,
         barSpacing: 6,

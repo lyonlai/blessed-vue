@@ -350,9 +350,9 @@ blessed-contrib@^4.8.5:
     term-canvas "0.0.5"
     x256 ">=0.0.1"
 
-blessed-vue@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/blessed-vue/-/blessed-vue-2.0.0.tgz#124c57b56761fa08bc3a9f9ac3c078a2b96282ec"
+blessed-vue@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/blessed-vue/-/blessed-vue-2.0.1.tgz#542b322d7cf8a0674f81a21729772bceef8056c0"
   dependencies:
     blessed "^0.1.81"
     blessed-contrib "^4.8.5"

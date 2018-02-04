@@ -34,7 +34,6 @@ export default {
     this.$refs.screen.key(['C-c'], () => {
       process.exit(0)
     })
-    console.log(this.$store)
     setInterval(() => {
       this.appendLog(`${faker.name.findName()} called from ${faker.address.state()} ${prettySeconds(faker.random.number(3600))} ago.`)
     }, 1000)

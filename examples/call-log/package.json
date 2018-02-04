@@ -14,7 +14,7 @@
     "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
-    "blessed-vue": "^2.0.0",
+    "blessed-vue": "2.0.1",
     "faker": "^4.1.0",
     "moment": "^2.18.1",
     "pretty-seconds": "^0.2.1",

@@ -1,6 +1,6 @@
 <template>
   <screen ref='screen' :smartCSR="true" :keys="true">
-    <line-graph :lineData="lineData" :style="logStyle"/>
+    <component :is="activeGraph" />
     <donut :border="{ type: 'line' }" :style="{ border: { fg: 'green' } }" label="Progress" :radius="10" :arcWidth="4" remainColor="black"  :width="50" :height="20" :top="20" left="center" :data="donut"/>
     <lcd :segmentWidth="0.06"  :segmentInterval="0.11"
      :strokeWidth="0.11"
@@ -20,28 +20,19 @@
 
 <script>
 import moment from 'moment'
-import LineGraph from './line.js'
+import Primary from './primary.vue'
+import Secondary from './secondary.vue'
 let counter = 12;
 
 export default {
   name: 'log-component',
   components: {
-    LineGraph
+    Primary,
+    Secondary
   },
   data: () => {
     return {
-      lineData: {
-         x: ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12'],
-         y: [5, 1, 7, 5, 2, 4, 9, 1, 7, 3, 4, 5]
-      },
-      logStyle: {
-        bg: 'black',
-        fg: 'white',
-        border: {
-          fg: 'green',
-          // bg: 'red'
-        }
-      },
+      activeGraph: "Primary",
       markers: [
         {"lon" : "-37.90", "lat" : "65.90", color: "red", char: "X" }
       ],
@@ -57,12 +48,8 @@ export default {
       process.exit(0)
     })
 
-    setInterval(() => {
-      this.lineData = {
-        x: [...this.lineData.x.slice(1), `t${++counter}`],
-        y: [...this.lineData.y.slice(1), Math.floor(Math.random() * 10 % 10) + 1]
-      }
-    }, 1000)
+    this.$refs.screen.key(['f1'], () => {this.activeGraph = 'Primary'})
+    this.$refs.screen.key(['f2'], () => {this.activeGraph = 'Secondary'})
 
     setInterval(() => {
       this.lcd = moment().format("HH mm ss")
