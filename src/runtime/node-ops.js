@@ -11,14 +11,21 @@ import { refreshNode } from './util'
 import { transformStaticStyle, normalizeStyleBinding } from 'util/style'
 
 export function createElement (tagName: string, vnode: VNode) {
-  const isBlessed = isOverlappingTags(tagName) ? vnode.data.attrs.blessed === true : isBlessedTag(tagName)
+  const isBlessed = isOverlappingTags(tagName)
+    ? vnode.data.attrs.blessed === true
+    : isBlessedTag(tagName)
   const ctor = isBlessed ? blessed : contrib
   const data = vnode.data || {}
   const { staticStyle, style, attrs } = data
-  const el = ctor[tagName](Object.assign({ parent: vnode.elm }, attrs, {
-    style: staticStyle ? transformStaticStyle(staticStyle) : normalizeStyleBinding(style)
-  }))
+  const el = ctor[tagName](
+    Object.assign({ parent: vnode.elm }, attrs, {
+      style: staticStyle
+        ? transformStaticStyle(staticStyle)
+        : normalizeStyleBinding(style)
+    })
+  )
   el.elm = el
+
   return el
 }
 
@@ -27,7 +34,9 @@ export function createElementNS (namespace: string, tagName: string) {
 }
 
 export function createTextNode (text: string, options: Object = {}): Text {
-  return blessed['text'](Object.assign({ content: text, hidden: text.trim() === '' }, options))
+  return blessed['text'](
+    Object.assign({ content: text, hidden: text.trim() === '' }, options)
+  )
 }
 
 export function createComment (text: string): Comment {
@@ -36,6 +45,7 @@ export function createComment (text: string): Comment {
 
 export function insertBefore (parentNode, newNode, referenceNode) {
   parentNode.insertBefore(newNode, referenceNode)
+  newNode.parentNode = parentNode
   continueAttributeUpdateIfRequired(newNode)
   refreshNode(parentNode)
 }
@@ -48,6 +58,7 @@ export function removeChild (node, child) {
 
 export function appendChild (node, child) {
   node.append(child)
+  child.parentNode = node
   continueAttributeUpdateIfRequired(child)
   refreshNode(node)
 }

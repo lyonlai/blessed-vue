@@ -1,6 +1,6 @@
 {
   "name": "blessed-vue",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A VueJS runtime to render Blessed to build command line UI.",
   "main": "dist/build.js",
   "repository": "https://github.com/lyonlai/blessed-vue.git",

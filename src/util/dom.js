@@ -10,6 +10,7 @@ export class BlessedDOM {
   constructor () {
     this.children = []
     this._events = {}
+    this.type = 'root-dom'
   }
 
   append (c) {
@@ -34,6 +35,7 @@ export class BlessedPlaceboElement {
   constructor (parent) {
     this.parent = parent
     this.elm = this
+    this.type = 'placebo'
   }
 
   destroy () {}
