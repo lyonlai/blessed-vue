@@ -16,7 +16,7 @@
   "dependencies": {
     "blessed-vue": "2.0.1",
     "faker": "^4.1.0",
-    "moment": "^2.18.1",
+    "moment": "^2.29.4",
     "pretty-seconds": "^0.2.1",
     "vuex": "^3.0.1"
   }
